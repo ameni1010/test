@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-k8s-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node-k8s-app
+  template:
+    metadata:
+      labels:
+        app: node-k8s-app
+    spec:
+      containers:
+        - name: node-app
+          image: node-k8s-app:latest  # image must match what you built with Docker
+          imagePullPolicy: Never     # 👈 This is the key
+          ports:
+            - containerPort: 80

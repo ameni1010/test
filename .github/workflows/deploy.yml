@@ -27,11 +27,11 @@ jobs:
 
     - name: Commit and push updated deployment.yaml
       env:
-        GH_TOKEN: ${{ secrets.GH_PAT }}
+        GH_PAT: ${{ secrets.GH_PAT }}
       run: |
         git config user.name "github-actions"
         git config user.email "actions@github.com"
         git add kubernetes/deployment.yaml
-        git commit -m "Update image tag to ${{ github.sha }}" || echo "No changes to commit"
-        git remote set-url origin https://x-access-token:$GH_TOKEN@github.com/${{ github.repository }}
-        git push
+        git commit -m "Update image tag to ${{ github.sha }}" || echo "Nothing to commit"
+        git remote set-url origin https://x-access-token:$GH_PAT@github.com/${{ github.repository }}
+        git push origin main

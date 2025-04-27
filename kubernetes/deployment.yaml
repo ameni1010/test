@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: node-app
-          image: ameni1010/node-k8s-app:49c958ea5bff6169c3e75a94345cf64ee5b2e144
+          image: ameni1010/node-k8s-app:e6aff9ab3a697f47a8cdf54eda21f35a3b17cb87
           imagePullPolicy: Never     # 👈 This is the key
           ports:
             - containerPort: 80

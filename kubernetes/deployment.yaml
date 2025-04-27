@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: node-app
-          image: node-k8s-app:latest  # image must match what you built with Docker
+          image: ameni1010/node-k8s-app:4649c7d92c5d8e6975e431a518c485050edba2a6
           imagePullPolicy: Never     # 👈 This is the key
           ports:
             - containerPort: 80
